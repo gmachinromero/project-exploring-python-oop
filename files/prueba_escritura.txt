@@ -1,0 +1,11 @@
+
+    Esto es una prueba de escritura multilínea:
+    - Línea 1
+    - Línea 2
+    - Línea 3
+    - ...
+    
+**************************************************
+otra prueba de escritura
+**************************************************
+Escribiendo en modo Append desde el último caracter.
