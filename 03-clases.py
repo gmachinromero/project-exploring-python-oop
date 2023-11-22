@@ -213,3 +213,64 @@ def animal_habla(animal):
 
 animal_habla(vaca_1)
 animal_habla(oveja_1)
+
+
+# Ejercicios
+"""
+Ejercicio 1
+- Crea una clase llamada Punto con sus dos coordenadas X e Y.
+- Añade un método constructor para crear puntos fácilmente. Si no se reciben una coordenada, su valor será cero.
+- Sobreescribe el método string, para que al imprimir por pantalla un punto aparezca en formato (X,Y).
+- Añade un método llamado cuadrante que indique a qué cuadrante pertenece el punto.
+- Añade un método llamado vector, que tome otro punto y calcule el vector resultante entre los dos puntos.
+- Añade un método llamado distancia, que tome otro punto y calcule la distancia entre los dos puntos y la muestre por pantalla.
+"""
+
+
+class Punto:
+
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def cuadrante(self):
+        if self.x > 0 and self.y > 0:
+            return "Cuadrante 1."
+        elif self.x < 0 and self.y > 0:
+            return "Cuadrante 2."
+        elif self.x < 0 and self.y < 0:
+            return "Cuadrante 3."
+        elif self.x > 0 and self.y < 0:
+            return "Cuadrante 4."
+        elif self.x == 0 and self.y == 0:
+            return "Origen de coordenas."
+        elif self.x == 0 and self.y != 0:
+            return "Eje X."
+        elif self.x != 0 and self.y == 0:
+            return "Eje Y."
+        else:
+            return "Error."
+
+    def vector(self, punto):
+        componente_x = punto.x - self.x
+        componente_y = punto.y - self.y
+        return f"({componente_x}, {componente_y})"
+
+
+punto_1 = Punto(2, 3)
+punto_2 = Punto(-2, 3)
+punto_3 = Punto(-2, -3)
+punto_4 = Punto(2, -3)
+punto_origen = Punto()
+
+print(punto_1.cuadrante())
+print(punto_2.cuadrante())
+print(punto_3.cuadrante())
+print(punto_4.cuadrante())
+print(punto_origen.cuadrante())
+
+print(punto_1.vector(punto_2))
+print(punto_1.vector(punto_3))
